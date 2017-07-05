@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mi tienda Clase
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+
+    <ion-row wrap >
+
+      <ion-col col-6 *ngFor="let item of _ps.productos">
+
+        <img [src]="item.codigo | imagen" >
+
+        <p>
+          {{ item.producto }}
+        </p>
+        <br>
+        {{ item.precio_compra | currency:'USD':true}}
+        
+      </ion-col>
+      
+    </ion-row>
+    
+  </ion-grid>
+
+  <ion-infinite-scroll (ionInfinite)="siguiente_pagina($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+  
+
+</ion-content>
