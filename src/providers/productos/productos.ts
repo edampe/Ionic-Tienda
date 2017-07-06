@@ -9,9 +9,55 @@ export class ProductosService {
 
   pagina: number = 0
   productos: any[] = []
+  lineas: any[] = []
+  porCategoria: any[] = []
 
   constructor(public http: Http) {
     this.cargar_todos()
+    this.cargar_lineas()
+  }
+
+  cargar_por_categoria( categoria: number){
+
+    let url = URL_SERVICIOS + '/productos/por_tipo/' + categoria
+
+    this.http.get(url)
+              .map( resp => resp.json())
+              .subscribe( data => {
+
+                console.log(data)
+
+                if ( data.error ){
+
+                }else{
+                  this.porCategoria = data.productos
+                  console.log(this.porCategoria)
+                }
+
+
+    })
+  }
+
+  
+
+  cargar_lineas(){
+
+    let url = URL_SERVICIOS + '/lineas/'
+
+      this.http.get(url)
+                .map( resp => resp.json())
+                .subscribe( data => {
+  
+                  console.log(data)
+  
+                  if ( data.error ){
+  
+                  }else{
+                    this.lineas = data.lineas
+                    console.log(this.lineas)
+                  }
+      })
+
   }
 
   cargar_todos(){

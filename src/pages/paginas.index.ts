@@ -1,3 +1,4 @@
+
 export { CarritoPage } from './carrito/carrito'
 export { CategoriasPage } from './categorias/categorias'
 export { HomePage } from './home/home'

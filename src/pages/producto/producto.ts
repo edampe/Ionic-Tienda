@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { CarritoService } from '../../providers/index.services';
 
 
 @Component({
@@ -8,11 +9,18 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ProductoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  producto: any = {}
+
+  constructor( public navCtrl: NavController, 
+               public navParams: NavParams,
+               private _cs: CarritoService) {
+
+    console.log(this.navParams.get('producto'))
+    this.producto = this.navParams.get('producto')
+
+    
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProductoPage');
-  }
+
 
 }
