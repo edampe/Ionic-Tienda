@@ -5,7 +5,7 @@ import { ProductosService } from '../../providers/index.services';
 
 import { ProductoPage } from '../paginas.index';
 
-import { CarritoService } from '../../providers/index.services';
+import { CarritoService, UsuarioService } from '../../providers/index.services';
 
 
 
@@ -19,7 +19,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
               private _ps: ProductosService,
-              private _cs: CarritoService) {
+              private _cs: CarritoService,
+              private _us: UsuarioService) {
 
   }
 

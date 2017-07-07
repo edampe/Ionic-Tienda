@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 
 import { URL_SERVICIOS } from '../../config/url.servicios'
 
+
 @Injectable()
 export class ProductosService {
 
@@ -86,6 +87,16 @@ export class ProductosService {
   
     })
     return promesa
+  }
+
+  buscar( termino: string){
+
+    let url =  `${ URL_SERVICIOS }/productos/buscar/${ termino }`
+
+    return this.http.get( url )
+                    .map( resp => resp.json())
+    
+
   }
 
 }

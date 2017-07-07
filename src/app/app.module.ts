@@ -22,7 +22,8 @@ import { CarritoPage,
          OrdenesPage,
          PorCategoriasPage,
          ProductoPage,
-         TabsPage } from '../pages/paginas.index';
+         TabsPage,
+         BuscarPage } from '../pages/paginas.index';
 
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -38,7 +39,8 @@ import { IonicStorageModule } from '@ionic/storage';
     PorCategoriasPage,
     ProductoPage,
     TabsPage,
-    ImagenPipe
+    ImagenPipe,
+    BuscarPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { IonicStorageModule } from '@ionic/storage';
     OrdenesPage,
     PorCategoriasPage,
     ProductoPage,
-    TabsPage
+    TabsPage,
+    BuscarPage
   ],
   providers: [
     StatusBar,
